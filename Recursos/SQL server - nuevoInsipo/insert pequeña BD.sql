@@ -71,5 +71,17 @@ values	(1, 'ET3AL', 'Alimentador Allen', '1RC/Al', '01/03/2000 15:06', 1, 1, 'No
 		(7, 'ET3LB', 'Salida Céspedes', '352/LBCE', '10/12/2019 12:39', 7, 6, 'No', 4, 'Disparo Interrptor por Mínima frecuencia', '');
         
 update operaciones set fecha = '2000-03-01 15:06' where id = 1;
+update operaciones set fecha = '2003-05-03 17:09' where id = 2;
+update operaciones set fecha = '2006-07-05 19:12' where id = 3;
+update operaciones set fecha = '2009-09-07 21:15' where id = 4;
+update operaciones set fecha = '2012-09-11 23:18' where id = 5;
+update operaciones set fecha = '2015-01-11 01:21' where id = 6;
+update operaciones set fecha = '2018-03-01 03:24' where id = 7;
+update operaciones set fecha = '2001-03-04 04:27' where id = 8;
+update operaciones set fecha = '2004-06-04 06:30' where id = 9;
+update operaciones set fecha = '2010-08-06 08:33' where id = 10;
+update operaciones set fecha = '2016-10-08 10:36' where id = 11;
+update operaciones set fecha = '2019-12-10 12:39' where id = 12;
+
 
 select * from operaciones;
