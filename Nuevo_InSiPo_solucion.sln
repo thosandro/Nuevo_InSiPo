@@ -13,7 +13,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "capaNegocio", "capaNegocio\
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Consideraciones", "Consideraciones", "{DF178B56-055F-4227-986A-A4B2CE63C94F}"
 	ProjectSection(SolutionItems) = preProject
-		TextFile1.txt = TextFile1.txt
+		Implementar.txt = Implementar.txt
 	EndProjectSection
 EndProject
 Global
