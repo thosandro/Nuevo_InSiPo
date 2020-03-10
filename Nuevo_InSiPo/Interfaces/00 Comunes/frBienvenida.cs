@@ -1,4 +1,5 @@
-﻿using System;
+﻿using capaDatos;
+using System;
 using System.Data.OleDb;
 using System.Windows.Forms;
 
@@ -6,7 +7,7 @@ namespace Nuevo_InSiPo.Interfaces
 {
     public partial class frBienvenida : Form
     {
-        private static OleDbConnection miConexion = new OleDbConnection("Provider=Microsoft.Jet.OLEDB.4.0;Data Source=C:\\Users\\Maxi-eNova\\Qsync\\Programacion\\C#\\Nuevo_InSiPo_solucion\\Recursos\\REPORTE_pu.mdb");
+        //private static OleDbConnection miConexion = new OleDbConnection("Provider=Microsoft.Jet.OLEDB.4.0;Data Source=C:\\Users\\Maxi-eNova\\Qsync\\Programacion\\C#\\Nuevo_InSiPo_solucion\\Recursos\\REPORTE_pu.mdb");
         public frBienvenida()
         {
             InitializeComponent();
@@ -18,12 +19,12 @@ namespace Nuevo_InSiPo.Interfaces
             txtPruebaConexion.Text = "Probando conexion a la base de datos...";
             try
             {
-                miConexion.Open();
+                conexionBD.miConexion.Open();
 
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Hubo un problema al intentar conectar con la base de datos. " + ex + " // " + miConexion.ConnectionString);
+                MessageBox.Show("Hubo un problema al intentar conectar con la base de datos. " + ex + " // " + conexionBD.miConexion.ConnectionString);
                 Application.Exit();
             }
         }
@@ -31,7 +32,7 @@ namespace Nuevo_InSiPo.Interfaces
         private void timer1_Tick(object sender, EventArgs e)
         {
             timer1.Stop();
-            miConexion.Close();
+            conexionBD.miConexion.Close();
             txtPruebaConexion.Text = "Conexion exitosa.";
             timer2.Start();
         }

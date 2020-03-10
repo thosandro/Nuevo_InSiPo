@@ -82,6 +82,7 @@
             this.txtIdEquipo = new System.Windows.Forms.Label();
             this.txtIdMotivo = new System.Windows.Forms.Label();
             this.txtIdResponsable = new System.Windows.Forms.Label();
+            this.opcMantenerFecha = new System.Windows.Forms.CheckBox();
             this.groupGeneral.SuspendLayout();
             this.groupFalla.SuspendLayout();
             this.groupActuaciones.SuspendLayout();
@@ -115,7 +116,7 @@
             this.cbET.Location = new System.Drawing.Point(140, 119);
             this.cbET.Name = "cbET";
             this.cbET.Size = new System.Drawing.Size(133, 25);
-            this.cbET.TabIndex = 2;
+            this.cbET.TabIndex = 3;
             this.cbET.SelectedIndexChanged += new System.EventHandler(this.cbET_SelectedIndexChanged);
             this.cbET.TextChanged += new System.EventHandler(this.cbET_TextChanged);
             this.cbET.Leave += new System.EventHandler(this.cbET_Leave);
@@ -136,7 +137,7 @@
             this.cbEquipo.Location = new System.Drawing.Point(140, 150);
             this.cbEquipo.Name = "cbEquipo";
             this.cbEquipo.Size = new System.Drawing.Size(133, 25);
-            this.cbEquipo.TabIndex = 3;
+            this.cbEquipo.TabIndex = 4;
             this.cbEquipo.SelectedIndexChanged += new System.EventHandler(this.cbEquipo_SelectedIndexChanged);
             // 
             // cbMotivo
@@ -146,7 +147,7 @@
             this.cbMotivo.Location = new System.Drawing.Point(140, 208);
             this.cbMotivo.Name = "cbMotivo";
             this.cbMotivo.Size = new System.Drawing.Size(133, 25);
-            this.cbMotivo.TabIndex = 4;
+            this.cbMotivo.TabIndex = 5;
             this.cbMotivo.SelectedIndexChanged += new System.EventHandler(this.cbMotivo_SelectedIndexChanged);
             this.cbMotivo.TextChanged += new System.EventHandler(this.cbMotivo_TextChanged);
             this.cbMotivo.Leave += new System.EventHandler(this.cbMotivo_Leave);
@@ -188,7 +189,7 @@
             this.cbResponsable.Location = new System.Drawing.Point(140, 239);
             this.cbResponsable.Name = "cbResponsable";
             this.cbResponsable.Size = new System.Drawing.Size(240, 25);
-            this.cbResponsable.TabIndex = 5;
+            this.cbResponsable.TabIndex = 6;
             // 
             // txtAP
             // 
@@ -198,6 +199,7 @@
             this.txtAP.Name = "txtAP";
             this.txtAP.Size = new System.Drawing.Size(51, 23);
             this.txtAP.TabIndex = 14;
+            this.txtAP.TabStop = false;
             // 
             // cbCorte
             // 
@@ -209,7 +211,7 @@
             this.cbCorte.Location = new System.Drawing.Point(139, 270);
             this.cbCorte.Name = "cbCorte";
             this.cbCorte.Size = new System.Drawing.Size(51, 25);
-            this.cbCorte.TabIndex = 6;
+            this.cbCorte.TabIndex = 7;
             // 
             // label6
             // 
@@ -239,7 +241,8 @@
             this.txtDescripcion.Name = "txtDescripcion";
             this.txtDescripcion.ReadOnly = true;
             this.txtDescripcion.Size = new System.Drawing.Size(234, 144);
-            this.txtDescripcion.TabIndex = 9;
+            this.txtDescripcion.TabIndex = 123;
+            this.txtDescripcion.TabStop = false;
             this.txtDescripcion.Visible = false;
             // 
             // opcApertura
@@ -277,7 +280,7 @@
             this.groupGeneral.Location = new System.Drawing.Point(38, 311);
             this.groupGeneral.Name = "groupGeneral";
             this.groupGeneral.Size = new System.Drawing.Size(234, 152);
-            this.groupGeneral.TabIndex = 7;
+            this.groupGeneral.TabIndex = 8;
             this.groupGeneral.TabStop = false;
             this.groupGeneral.Text = " Descripción: ";
             this.groupGeneral.Visible = false;
@@ -303,10 +306,10 @@
             this.groupFalla.Controls.Add(this.opcDisparo);
             this.groupFalla.Controls.Add(this.opcCierreFalla);
             this.groupFalla.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold);
-            this.groupFalla.Location = new System.Drawing.Point(9, 333);
+            this.groupFalla.Location = new System.Drawing.Point(15, 333);
             this.groupFalla.Name = "groupFalla";
             this.groupFalla.Size = new System.Drawing.Size(234, 152);
-            this.groupFalla.TabIndex = 8;
+            this.groupFalla.TabIndex = 9;
             this.groupFalla.TabStop = false;
             this.groupFalla.Text = " Descripción ";
             this.groupFalla.Visible = false;
@@ -547,7 +550,8 @@
             this.txtActuaciones.Name = "txtActuaciones";
             this.txtActuaciones.ReadOnly = true;
             this.txtActuaciones.Size = new System.Drawing.Size(234, 121);
-            this.txtActuaciones.TabIndex = 11;
+            this.txtActuaciones.TabIndex = 124;
+            this.txtActuaciones.TabStop = false;
             this.txtActuaciones.Text = "sin señalizacion";
             this.txtActuaciones.Visible = false;
             // 
@@ -634,7 +638,7 @@
             this.txtObservaciones.Name = "txtObservaciones";
             this.txtObservaciones.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.txtObservaciones.Size = new System.Drawing.Size(474, 70);
-            this.txtObservaciones.TabIndex = 12;
+            this.txtObservaciones.TabIndex = 11;
             // 
             // txtTipoEquipo
             // 
@@ -718,14 +722,27 @@
             this.txtIdResponsable.Text = "<idResponsable>";
             this.txtIdResponsable.UseMnemonic = false;
             // 
+            // opcMantenerFecha
+            // 
+            this.opcMantenerFecha.AutoSize = true;
+            this.opcMantenerFecha.Font = new System.Drawing.Font("Century Gothic", 9.75F);
+            this.opcMantenerFecha.Location = new System.Drawing.Point(282, 92);
+            this.opcMantenerFecha.Name = "opcMantenerFecha";
+            this.opcMantenerFecha.Size = new System.Drawing.Size(129, 21);
+            this.opcMantenerFecha.TabIndex = 2;
+            this.opcMantenerFecha.Text = "Mantener fecha";
+            this.opcMantenerFecha.UseVisualStyleBackColor = true;
+            // 
             // frCargaNovedes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(143)))), ((int)(((byte)(185)))));
             this.ClientSize = new System.Drawing.Size(573, 745);
+            this.Controls.Add(this.opcMantenerFecha);
             this.Controls.Add(this.txtIdResponsable);
             this.Controls.Add(this.txtIdMotivo);
+            this.Controls.Add(this.groupFalla);
             this.Controls.Add(this.txtIdEquipo);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.txtDescripcionEquipo);
@@ -739,7 +756,6 @@
             this.Controls.Add(this.label8);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.btnGuardar);
-            this.Controls.Add(this.groupFalla);
             this.Controls.Add(this.txtActuaciones);
             this.Controls.Add(this.groupActuaciones);
             this.Controls.Add(this.groupGeneral);
@@ -833,5 +849,6 @@
         private System.Windows.Forms.Label txtIdEquipo;
         private System.Windows.Forms.Label txtIdMotivo;
         private System.Windows.Forms.Label txtIdResponsable;
+        private System.Windows.Forms.CheckBox opcMantenerFecha;
     }
 }

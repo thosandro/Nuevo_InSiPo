@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Windows.Forms;
+using MySql.Data.Types;
 
 namespace Nuevo_InSiPo.Interfaces
 {
@@ -256,6 +257,7 @@ namespace Nuevo_InSiPo.Interfaces
         {
             E_Novedades objEntidad = new E_Novedades();
 
+            //MySqlDateTime dateTime = new MySqlDateTime(txtFechaHora.Text);
             objEntidad.Fecha = Convert.ToDateTime(txtFechaHora.Text);
             objEntidad.EquipoAsociado = Convert.ToInt32(txtIdEquipo.Text.Trim());
             objEntidad.ET = cbET.Text.Trim();
@@ -271,12 +273,15 @@ namespace Nuevo_InSiPo.Interfaces
 
             try
             {
-                N_Novedades objNegocio = new N_Novedades();
-                objNegocio.agregarNovedad(objEntidad);
+                //N_Novedades objNegocio = new N_Novedades();
+                //objNegocio.agregarNovedad(objEntidad);
 
+                DialogResult result = MessageBox.Show("¿Continuar con la misma ET?", "Continuar", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
-
-                MessageBox.Show("Guardado correcto. ¿Desea continuar con la misma ET?");
+                if (result == DialogResult.Yes)
+                    FXL_limpiarCampos(true);
+                else if (result == DialogResult.No)
+                    FXL_limpiarCampos(false);
 
             }
             catch (Exception ex)
@@ -289,7 +294,26 @@ namespace Nuevo_InSiPo.Interfaces
         /* FUNCIONES PROPIAS */
         /*********************/
 
-        //private void FXL_limpiar
+        private void FXL_limpiarCampos(bool continuaET)
+        {
+            if (opcMantenerFecha.Checked == false)
+                txtFechaHora.Text = "";
+            else
+                txtFechaHora.Text = txtFechaHora.Text.Substring(0, 8);
+
+            if (continuaET == false)
+                cbET.SelectedIndex = -1;
+    
+            cbEquipo.SelectedIndex = -1;
+            cbMotivo.SelectedIndex = -1;
+            cbResponsable.SelectedIndex = -1;
+            cbCorte.SelectedIndex = -1;
+            txtObservaciones.Text = "";
+
+            FXL_ocultarTodo();
+
+            txtFechaHora.Focus();
+        }
         private void FXL_comboBoxEETT()
         {
             N_EETT objNegocio = new N_EETT();

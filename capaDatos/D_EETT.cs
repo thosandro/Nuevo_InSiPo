@@ -1,4 +1,5 @@
 ﻿using capaEntidades;
+using MySql.Data.MySqlClient;
 using System.Collections.Generic;
 using System.Data.OleDb;
 using System.Data.SqlClient;
@@ -9,11 +10,19 @@ namespace capaDatos
     {
         public List<E_EETT> listarEETT(string codificacionET)
         {
-            SqlDataReader leerFilas;
-            SqlCommand cmd = new SqlCommand("SP_listarEETT",conexionBD.miConexion);
+            //SqlDataReader leerFilas;
+            //SqlCommand cmd = new SqlCommand("SP_listarEETT",conexionBD.miConexion);
+            //cmd.CommandType = System.Data.CommandType.StoredProcedure;
+            //conexionBD.miConexion.Open();
+
+            //cmd.Parameters.AddWithValue("@buscar", codificacionET);
+
+            MySqlDataReader leerFilas;
+            MySqlCommand cmd = new MySqlCommand("SP_listarEETT", conexionBD.mySqlConexion);
             cmd.CommandType = System.Data.CommandType.StoredProcedure;
-            conexionBD.miConexion.Open();
-            cmd.Parameters.AddWithValue("@buscar", codificacionET);
+            conexionBD.mySqlConexion.Open();
+
+            cmd.Parameters.AddWithValue("pBuscar", codificacionET);
 
             leerFilas = cmd.ExecuteReader();
 
@@ -30,7 +39,8 @@ namespace capaDatos
                 });
             }
 
-            conexionBD.miConexion.Close();
+            //conexionBD.miConexion.Close();
+            conexionBD.mySqlConexion.Close();
             leerFilas.Close();
 
             return listar;

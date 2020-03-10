@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Data.SqlClient;
+using MySql.Data.MySqlClient;
 
 namespace capaDatos
 {
@@ -11,13 +12,21 @@ namespace capaDatos
     {
         public List<E_Equipos> listarEquiposParaCargaNovedades(string codificacionET, string nombreCampo)
         {
-            SqlDataReader leerFilas;
-            SqlCommand cmd = new SqlCommand("SP_listarEquipamientoParaCargaDeNovedades", conexionBD.miConexion);
-            cmd.CommandType = System.Data.CommandType.StoredProcedure;
-            conexionBD.miConexion.Open();
+            //SqlDataReader leerFilas;
+            //SqlCommand cmd = new SqlCommand("SP_listarEquipamientoParaCargaDeNovedades", conexionBD.miConexion);
+            //cmd.CommandType = System.Data.CommandType.StoredProcedure;
+            //conexionBD.miConexion.Open();
 
-            cmd.Parameters.AddWithValue("@buscar", nombreCampo);
-            cmd.Parameters.AddWithValue("@ET", codificacionET);
+            //cmd.Parameters.AddWithValue("@buscar", nombreCampo);
+            //cmd.Parameters.AddWithValue("@ET", codificacionET);
+
+            MySqlDataReader leerFilas;
+            MySqlCommand cmd = new MySqlCommand("SP_listarEquipamientoParaCargaDeNovedades", conexionBD.mySqlConexion);
+            cmd.CommandType = System.Data.CommandType.StoredProcedure;
+            conexionBD.mySqlConexion.Open();
+
+            cmd.Parameters.AddWithValue("pBuscar", nombreCampo);
+            cmd.Parameters.AddWithValue("pET", codificacionET);
 
             leerFilas = cmd.ExecuteReader();
 
@@ -37,7 +46,8 @@ namespace capaDatos
                 });
             }
 
-            conexionBD.miConexion.Close();
+            //conexionBD.miConexion.Close();
+            conexionBD.mySqlConexion.Close();
             leerFilas.Close();
 
             return listar;

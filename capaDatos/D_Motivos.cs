@@ -1,4 +1,5 @@
 ﻿using capaEntidades;
+using MySql.Data.MySqlClient;
 using System.Collections.Generic;
 using System.Data.OleDb;
 using System.Data.SqlClient;
@@ -9,10 +10,17 @@ namespace capaDatos
     {
         public List<E_Motivos> listarMotivos()
         {
-            SqlDataReader leerFilas;
-            SqlCommand cmd = new SqlCommand("SP_listarMotivo", conexionBD.miConexion);
+            //SqlDataReader leerFilas;
+            //SqlCommand cmd = new SqlCommand("SP_listarMotivo", conexionBD.miConexion);
+            //cmd.CommandType = System.Data.CommandType.StoredProcedure;
+            //conexionBD.miConexion.Open();
+
+            //leerFilas = cmd.ExecuteReader();
+
+            MySqlDataReader leerFilas;
+            MySqlCommand cmd = new MySqlCommand("SP_listarMotivo", conexionBD.mySqlConexion);
             cmd.CommandType = System.Data.CommandType.StoredProcedure;
-            conexionBD.miConexion.Open();
+            conexionBD.mySqlConexion.Open();
 
             leerFilas = cmd.ExecuteReader();
 
@@ -29,7 +37,8 @@ namespace capaDatos
                 });
             }
 
-            conexionBD.miConexion.Close();
+            //conexionBD.miConexion.Close();
+            conexionBD.mySqlConexion.Close();
             leerFilas.Close();
 
             return listar;
