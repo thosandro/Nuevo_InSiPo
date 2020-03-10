@@ -1,0 +1,3 @@
+CARGA DE NOVEDADES:
+	agregar check para instantanea.
+	Agregar sin señalizacion por defecto.
