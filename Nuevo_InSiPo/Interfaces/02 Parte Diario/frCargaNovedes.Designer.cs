@@ -83,6 +83,8 @@
             this.txtIdMotivo = new System.Windows.Forms.Label();
             this.txtIdResponsable = new System.Windows.Forms.Label();
             this.opcMantenerFecha = new System.Windows.Forms.CheckBox();
+            this.txtIdSistema = new System.Windows.Forms.Label();
+            this.txtIdET = new System.Windows.Forms.Label();
             this.groupGeneral.SuspendLayout();
             this.groupFalla.SuspendLayout();
             this.groupActuaciones.SuspendLayout();
@@ -611,7 +613,7 @@
             // 
             this.txtNivelTension.AutoSize = true;
             this.txtNivelTension.Font = new System.Drawing.Font("Century Gothic", 9.75F);
-            this.txtNivelTension.Location = new System.Drawing.Point(590, 141);
+            this.txtNivelTension.Location = new System.Drawing.Point(679, 158);
             this.txtNivelTension.Name = "txtNivelTension";
             this.txtNivelTension.Size = new System.Drawing.Size(83, 17);
             this.txtNivelTension.TabIndex = 32;
@@ -644,7 +646,7 @@
             // 
             this.txtTipoEquipo.AutoSize = true;
             this.txtTipoEquipo.Font = new System.Drawing.Font("Century Gothic", 9.75F);
-            this.txtTipoEquipo.Location = new System.Drawing.Point(590, 124);
+            this.txtTipoEquipo.Location = new System.Drawing.Point(588, 178);
             this.txtTipoEquipo.Name = "txtTipoEquipo";
             this.txtTipoEquipo.Size = new System.Drawing.Size(103, 17);
             this.txtTipoEquipo.TabIndex = 35;
@@ -656,7 +658,7 @@
             // 
             this.txtNombreCampo.AutoSize = true;
             this.txtNombreCampo.Font = new System.Drawing.Font("Century Gothic", 9.75F);
-            this.txtNombreCampo.Location = new System.Drawing.Point(590, 158);
+            this.txtNombreCampo.Location = new System.Drawing.Point(697, 178);
             this.txtNombreCampo.Name = "txtNombreCampo";
             this.txtNombreCampo.Size = new System.Drawing.Size(134, 17);
             this.txtNombreCampo.TabIndex = 36;
@@ -693,7 +695,7 @@
             // 
             this.txtIdEquipo.AutoSize = true;
             this.txtIdEquipo.Font = new System.Drawing.Font("Century Gothic", 9.75F);
-            this.txtIdEquipo.Location = new System.Drawing.Point(590, 175);
+            this.txtIdEquipo.Location = new System.Drawing.Point(588, 158);
             this.txtIdEquipo.Name = "txtIdEquipo";
             this.txtIdEquipo.Size = new System.Drawing.Size(85, 17);
             this.txtIdEquipo.TabIndex = 39;
@@ -733,12 +735,36 @@
             this.opcMantenerFecha.Text = "Mantener fecha";
             this.opcMantenerFecha.UseVisualStyleBackColor = true;
             // 
+            // txtIdSistema
+            // 
+            this.txtIdSistema.AutoSize = true;
+            this.txtIdSistema.Font = new System.Drawing.Font("Century Gothic", 9.75F);
+            this.txtIdSistema.Location = new System.Drawing.Point(648, 122);
+            this.txtIdSistema.Name = "txtIdSistema";
+            this.txtIdSistema.Size = new System.Drawing.Size(89, 17);
+            this.txtIdSistema.TabIndex = 126;
+            this.txtIdSistema.Text = "< idSistema>";
+            this.txtIdSistema.UseMnemonic = false;
+            // 
+            // txtIdET
+            // 
+            this.txtIdET.AutoSize = true;
+            this.txtIdET.Font = new System.Drawing.Font("Century Gothic", 9.75F);
+            this.txtIdET.Location = new System.Drawing.Point(590, 122);
+            this.txtIdET.Name = "txtIdET";
+            this.txtIdET.Size = new System.Drawing.Size(52, 17);
+            this.txtIdET.TabIndex = 125;
+            this.txtIdET.Text = "< idET>";
+            this.txtIdET.UseMnemonic = false;
+            // 
             // frCargaNovedes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(143)))), ((int)(((byte)(185)))));
-            this.ClientSize = new System.Drawing.Size(573, 745);
+            this.ClientSize = new System.Drawing.Size(1114, 745);
+            this.Controls.Add(this.txtIdSistema);
+            this.Controls.Add(this.txtIdET);
             this.Controls.Add(this.opcMantenerFecha);
             this.Controls.Add(this.txtIdResponsable);
             this.Controls.Add(this.txtIdMotivo);
@@ -850,5 +876,7 @@
         private System.Windows.Forms.Label txtIdMotivo;
         private System.Windows.Forms.Label txtIdResponsable;
         private System.Windows.Forms.CheckBox opcMantenerFecha;
+        private System.Windows.Forms.Label txtIdSistema;
+        private System.Windows.Forms.Label txtIdET;
     }
 }

@@ -259,12 +259,12 @@ namespace Nuevo_InSiPo.Interfaces
 
             //MySqlDateTime dateTime = new MySqlDateTime(txtFechaHora.Text);
             objEntidad.Fecha = Convert.ToDateTime(txtFechaHora.Text);
-            objEntidad.EquipoAsociado = Convert.ToInt32(txtIdEquipo.Text.Trim());
-            objEntidad.ET = cbET.Text.Trim();
-            objEntidad.NombreCampo = txtNombreCampo.Text.Trim();
-            objEntidad.CodificacionEquipo = cbEquipo.Text.Trim();
-            objEntidad.Id_Motivo = Convert.ToInt32(txtIdMotivo.Text.Trim());
-            objEntidad.Id_Responsable = Convert.ToInt32(txtIdResponsable.Text.Trim());
+            objEntidad.IdEquipo = Convert.ToInt32(txtIdEquipo.Text.Trim());
+            //objEntidad.ET = cbET.Text.Trim();
+            //objEntidad.NombreCampo = txtNombreCampo.Text.Trim();
+            //objEntidad.CodificacionEquipo = cbEquipo.Text.Trim();
+            objEntidad.IdMotivo = Convert.ToInt32(txtIdMotivo.Text.Trim());
+            objEntidad.IdResponsable = Convert.ToInt32(txtIdResponsable.Text.Trim());
             objEntidad.Ens = cbCorte.Text;
             objEntidad.Ap = Convert.ToInt32(txtAP.Text);
             objEntidad.Descripcion = txtDescripcion.Text.Trim();
@@ -273,8 +273,8 @@ namespace Nuevo_InSiPo.Interfaces
 
             try
             {
-                //N_Novedades objNegocio = new N_Novedades();
-                //objNegocio.agregarNovedad(objEntidad);
+                N_Novedades objNegocio = new N_Novedades();
+                objNegocio.agregarNovedad(objEntidad);
 
                 DialogResult result = MessageBox.Show("¿Continuar con la misma ET?", "Continuar", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
@@ -326,6 +326,7 @@ namespace Nuevo_InSiPo.Interfaces
 
             txtNombreET.DataBindings.Clear();
             txtNombreET.DataBindings.Add("Text", listaEETT, "nombreCompleto");
+            
 
             //Autocompletado
             AutoCompleteStringCollection coleccion = new AutoCompleteStringCollection();

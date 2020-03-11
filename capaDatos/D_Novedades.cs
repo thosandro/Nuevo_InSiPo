@@ -32,13 +32,10 @@ namespace capaDatos
             cmd.CommandType = System.Data.CommandType.StoredProcedure;
             conexionBD.mySqlConexion.Open();
 
-            cmd.Parameters.AddWithValue("pId_Equipamiento", novedad.EquipoAsociado);
-            cmd.Parameters.AddWithValue("pET", novedad.ET);
-            cmd.Parameters.AddWithValue("pNombreCampo", novedad.NombreCampo);
-            cmd.Parameters.AddWithValue("pCodificacionEquipo", novedad.CodificacionEquipo);
             cmd.Parameters.AddWithValue("pFecha", novedad.Fecha);
-            cmd.Parameters.AddWithValue("pId_Motivo", novedad.Id_Motivo);
-            cmd.Parameters.AddWithValue("pId_responsable", novedad.Id_Responsable);
+            cmd.Parameters.AddWithValue("pId_Equipamiento", novedad.IdEquipo);
+            cmd.Parameters.AddWithValue("pId_Motivo", novedad.IdMotivo);
+            cmd.Parameters.AddWithValue("pId_responsable", novedad.IdResponsable);
             cmd.Parameters.AddWithValue("pEns", novedad.Ens);
             cmd.Parameters.AddWithValue("pAp", novedad.Ap);
             cmd.Parameters.AddWithValue("pDescripcion", novedad.Descripcion);
@@ -61,7 +58,7 @@ namespace capaDatos
             //cmd.Parameters.AddWithValue("@buscar", ET);
 
             MySqlDataReader leerFilas;
-            MySqlCommand cmd = new MySqlCommand("SP_listarOperacion", conexionBD.mySqlConexion);
+            MySqlCommand cmd = new MySqlCommand("SP_listarOperaciones", conexionBD.mySqlConexion);
             cmd.CommandType = System.Data.CommandType.StoredProcedure;
             conexionBD.mySqlConexion.Open();
 
@@ -77,17 +74,17 @@ namespace capaDatos
                 {
                     Id = leerFilas.GetInt64(0),
                     Fecha = leerFilas.GetDateTime(1),
-                    ET = leerFilas.GetString(2),
+                    CodificacionET = leerFilas.GetString(2),
+                    CodificacionSistema = leerFilas.GetString(3),
                     NombreCampo = leerFilas.GetString(3),
                     CodificacionEquipo = leerFilas.GetString(4),
-                    ResponsableAsociado = leerFilas.GetString(5),
-                    MotivoAsociado = leerFilas.GetString(6),
+                    Motivo = leerFilas.GetString(5),
+                    Responsable = leerFilas.GetString(6),
                     Ens = leerFilas.GetString(7),
                     Ap = leerFilas.GetInt32(8),
                     Descripcion = leerFilas.GetString(9),
                     Actuaciones = leerFilas.GetString(10),
-                    EquipoAsociado = leerFilas.GetInt32(11),
-                    Observaciones = leerFilas.GetString(12)
+                    Observaciones = leerFilas.GetString(11)
                 });
             }
 

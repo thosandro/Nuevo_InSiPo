@@ -1,3 +1,4 @@
 CARGA DE NOVEDADES:
 	agregar check para instantanea.
 	Agregar sin señalizacion por defecto. >> 10/03/2020 Casi hecho. MR.
+	Agregar la reposición negada por el COTDT.
