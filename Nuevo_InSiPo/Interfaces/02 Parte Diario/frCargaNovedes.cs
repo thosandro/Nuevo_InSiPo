@@ -198,6 +198,10 @@ namespace Nuevo_InSiPo.Interfaces
         {
             FXL_logicaDeCorrientes();
         }
+        private void opcInstantanea_CheckedChanged(object sender, EventArgs e)
+        {
+            FXL_logicaDeCorrientes();
+        }
 
         private void opcImpedancia_CheckedChanged(object sender, EventArgs e)
         {
@@ -257,12 +261,8 @@ namespace Nuevo_InSiPo.Interfaces
         {
             E_Novedades objEntidad = new E_Novedades();
 
-            //MySqlDateTime dateTime = new MySqlDateTime(txtFechaHora.Text);
             objEntidad.Fecha = Convert.ToDateTime(txtFechaHora.Text);
             objEntidad.IdEquipo = Convert.ToInt32(txtIdEquipo.Text.Trim());
-            //objEntidad.ET = cbET.Text.Trim();
-            //objEntidad.NombreCampo = txtNombreCampo.Text.Trim();
-            //objEntidad.CodificacionEquipo = cbEquipo.Text.Trim();
             objEntidad.IdMotivo = Convert.ToInt32(txtIdMotivo.Text.Trim());
             objEntidad.IdResponsable = Convert.ToInt32(txtIdResponsable.Text.Trim());
             objEntidad.Ens = cbCorte.Text;
@@ -282,14 +282,12 @@ namespace Nuevo_InSiPo.Interfaces
                     FXL_limpiarCampos(true);
                 else if (result == DialogResult.No)
                     FXL_limpiarCampos(false);
-
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Hubo un problema al intentar guardar. \n \n" + ex);
             }
         }
-
 
         /* FUNCIONES PROPIAS */
         /*********************/
@@ -326,7 +324,6 @@ namespace Nuevo_InSiPo.Interfaces
 
             txtNombreET.DataBindings.Clear();
             txtNombreET.DataBindings.Add("Text", listaEETT, "nombreCompleto");
-            
 
             //Autocompletado
             AutoCompleteStringCollection coleccion = new AutoCompleteStringCollection();
@@ -430,8 +427,6 @@ namespace Nuevo_InSiPo.Interfaces
         {
             groupActuaciones.Visible = false;
             txtActuaciones.Visible = false;
-            //this.Height = 468;
-            //btnGuardar.Location = new Point(519, 380);
         }
 
         private void FXL_ocultarTodo()
@@ -611,36 +606,46 @@ namespace Nuevo_InSiPo.Interfaces
             if (opcIfase.Checked == true && opcItierra.Checked == true)
             {
                 opcTemporizada.Visible = true;
+                opcInstantanea.Visible = true;
 
                 if (opcTemporizada.Checked == true)
                     txtActuaciones.Text = "Corriente máxima de fase y tierra temporizada.";
-                else if (opcTemporizada.Checked == false)
+                else if (opcInstantanea.Checked == true)
+                    txtActuaciones.Text = "Corriente máxima de fase y tierra instantánea";
+                else if (opcTemporizada.Checked == false & opcInstantanea.Checked == false)
                     txtActuaciones.Text = "Corriente máxima de fase y tierra.";
             }
 
             if (opcIfase.Checked == true && opcItierra.Checked == false)
             {
                 opcTemporizada.Visible = true;
+                opcInstantanea.Visible = true;
 
                 if (opcTemporizada.Checked == true)
                     txtActuaciones.Text = "Corriente máxima de fase temporizada.";
-                else if (opcTemporizada.Checked == false)
+                else if (opcInstantanea.Checked == true)
+                    txtActuaciones.Text = "Corriente máxima de fase instantánea";
+                else if (opcTemporizada.Checked == false & opcInstantanea.Checked == false)
                     txtActuaciones.Text = "Corriente máxima de fase.";
             }
 
             if (opcIfase.Checked == false && opcItierra.Checked == true)
             {
                 opcTemporizada.Visible = true;
+                opcInstantanea.Visible = true;
 
                 if (opcTemporizada.Checked == true)
                     txtActuaciones.Text = "Corriente máxima de tierra temporizada.";
-                else if (opcTemporizada.Checked == false)
+                else if (opcInstantanea.Checked == true)
+                    txtActuaciones.Text = "Corriente máxima de tierra instantánea";
+                else if (opcTemporizada.Checked == false & opcInstantanea.Checked == false)
                     txtActuaciones.Text = "Corriente máxima de tierra.";
             }
 
             if (opcIfase.Checked == false && opcItierra.Checked == false)
             {
                 opcTemporizada.Visible = false;
+                opcInstantanea.Visible = false;
                 txtActuaciones.Text = "";
 
                 FXL_habilitarActuaciones();
