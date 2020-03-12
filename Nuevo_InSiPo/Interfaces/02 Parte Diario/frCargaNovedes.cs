@@ -259,26 +259,25 @@ namespace Nuevo_InSiPo.Interfaces
         private void btnGuardar_Click(object sender, EventArgs e)
         {
             E_Novedades objEntidad = new E_Novedades();
-
-            objEntidad.Fecha = Convert.ToDateTime(txtFechaHora.Text);
-            objEntidad.IdEquipo = Convert.ToInt32(txtIdEquipo.Text.Trim());
-            objEntidad.IdMotivo = Convert.ToInt32(txtIdMotivo.Text.Trim());
-            objEntidad.IdResponsable = Convert.ToInt32(txtIdResponsable.Text.Trim());
-            objEntidad.Ens = cbCorte.Text;
-            objEntidad.Ap = Convert.ToInt32(txtAP.Text);
-            objEntidad.Descripcion = txtDescripcion.Text.Trim();
-
-            if (txtActuaciones.Visible == false)
-                objEntidad.Actuaciones = "";
-            else
-                objEntidad.Actuaciones = txtActuaciones.Text.Trim();
-
-            //objEntidad.Actuaciones = txtActuaciones.Text.Trim();
-            objEntidad.Observaciones = txtObservaciones.Text.Trim();
+            N_Novedades objNegocio = new N_Novedades();
 
             try
             {
-                N_Novedades objNegocio = new N_Novedades();
+                objEntidad.Fecha = Convert.ToDateTime(txtFechaHora.Text);
+                objEntidad.IdEquipo = Convert.ToInt32(txtIdEquipo.Text.Trim());
+                objEntidad.IdMotivo = Convert.ToInt32(txtIdMotivo.Text.Trim());
+                objEntidad.IdResponsable = Convert.ToInt32(txtIdResponsable.Text.Trim());
+                objEntidad.Ens = cbCorte.Text;
+                objEntidad.Ap = Convert.ToInt32(txtAP.Text);
+                objEntidad.Descripcion = txtDescripcion.Text.Trim();
+
+                if (txtActuaciones.Visible == false)
+                    objEntidad.Actuaciones = "";
+                else
+                    objEntidad.Actuaciones = txtActuaciones.Text.Trim();
+
+                objEntidad.Observaciones = txtObservaciones.Text.Trim();
+
                 objNegocio.agregarNovedad(objEntidad);
 
                 DialogResult result = MessageBox.Show("¿Continuar con la misma ET?", "Continuar", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
@@ -290,7 +289,8 @@ namespace Nuevo_InSiPo.Interfaces
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Hubo un problema al intentar guardar. \n \n" + ex);
+                MessageBox.Show("No se guardaron los cambios. \n \nVerifique que todos los campos estén llenos.", "Error al guardar", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                cls_log.archivoLog(this, sender, ex);            
             }
         }
 

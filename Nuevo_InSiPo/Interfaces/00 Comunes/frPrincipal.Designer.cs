@@ -465,6 +465,7 @@
             this.label2.Size = new System.Drawing.Size(204, 55);
             this.label2.TabIndex = 16;
             this.label2.Text = "In.Si.Po.";
+            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // label1
             // 
@@ -1324,7 +1325,7 @@
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frPrincipal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Inicio";
+            this.Text = "Nuevo InSiPo - Inicio";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.frPrincipal_FormClosed);
             this.pnlMenuLateral.ResumeLayout(false);
             this.pnlMenuLateral.PerformLayout();

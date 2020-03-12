@@ -56,6 +56,7 @@
             this.opcDisparo = new System.Windows.Forms.RadioButton();
             this.opcCierreFalla = new System.Windows.Forms.RadioButton();
             this.groupActuaciones = new System.Windows.Forms.GroupBox();
+            this.opcInstantanea = new System.Windows.Forms.CheckBox();
             this.opcFaseE = new System.Windows.Forms.CheckBox();
             this.opcFaseT = new System.Windows.Forms.CheckBox();
             this.opcFaseS = new System.Windows.Forms.CheckBox();
@@ -85,7 +86,6 @@
             this.opcMantenerFecha = new System.Windows.Forms.CheckBox();
             this.txtIdSistema = new System.Windows.Forms.Label();
             this.txtIdET = new System.Windows.Forms.Label();
-            this.opcInstantanea = new System.Windows.Forms.CheckBox();
             this.groupGeneral.SuspendLayout();
             this.groupFalla.SuspendLayout();
             this.groupActuaciones.SuspendLayout();
@@ -416,6 +416,19 @@
             this.groupActuaciones.Text = " Actuaciones ";
             this.groupActuaciones.Visible = false;
             // 
+            // opcInstantanea
+            // 
+            this.opcInstantanea.AutoSize = true;
+            this.opcInstantanea.Font = new System.Drawing.Font("Century Gothic", 9.75F);
+            this.opcInstantanea.Location = new System.Drawing.Point(59, 42);
+            this.opcInstantanea.Name = "opcInstantanea";
+            this.opcInstantanea.Size = new System.Drawing.Size(104, 21);
+            this.opcInstantanea.TabIndex = 11;
+            this.opcInstantanea.Text = "Instantánea";
+            this.opcInstantanea.UseVisualStyleBackColor = true;
+            this.opcInstantanea.Visible = false;
+            this.opcInstantanea.CheckedChanged += new System.EventHandler(this.opcInstantanea_CheckedChanged);
+            // 
             // opcFaseE
             // 
             this.opcFaseE.AutoSize = true;
@@ -566,6 +579,7 @@
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(35, 35);
             this.btnGuardar.TabIndex = 13;
+            this.btnGuardar.Tag = "btnGuardar";
             this.btnGuardar.UseVisualStyleBackColor = true;
             this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
@@ -759,19 +773,6 @@
             this.txtIdET.Text = "< idET>";
             this.txtIdET.UseMnemonic = false;
             // 
-            // opcInstantanea
-            // 
-            this.opcInstantanea.AutoSize = true;
-            this.opcInstantanea.Font = new System.Drawing.Font("Century Gothic", 9.75F);
-            this.opcInstantanea.Location = new System.Drawing.Point(59, 42);
-            this.opcInstantanea.Name = "opcInstantanea";
-            this.opcInstantanea.Size = new System.Drawing.Size(104, 21);
-            this.opcInstantanea.TabIndex = 11;
-            this.opcInstantanea.Text = "Instantánea";
-            this.opcInstantanea.UseVisualStyleBackColor = true;
-            this.opcInstantanea.Visible = false;
-            this.opcInstantanea.CheckedChanged += new System.EventHandler(this.opcInstantanea_CheckedChanged);
-            // 
             // frCargaNovedes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -817,11 +818,12 @@
             this.Controls.Add(this.label1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "frCargaNovedes";
-            this.Text = " ";
+            this.Text = "Carga de Novedades";
             this.Load += new System.EventHandler(this.frCargaNovedes_Load);
             this.groupGeneral.ResumeLayout(false);
             this.groupGeneral.PerformLayout();

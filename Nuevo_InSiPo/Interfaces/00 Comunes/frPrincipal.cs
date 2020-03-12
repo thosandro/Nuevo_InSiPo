@@ -92,5 +92,13 @@ namespace Nuevo_InSiPo.Interfaces
             pnlAtlantico.Visible = false;
             pnlAndino.Visible = false;
         }
+
+
+        /***************** SOLO PARA PROBAR LOG ********************/
+        private void label2_Click(object sender, EventArgs e)
+        {
+           
+        }
+        /***************** SOLO PARA PROBAR LOG ********************/
     }
 }
