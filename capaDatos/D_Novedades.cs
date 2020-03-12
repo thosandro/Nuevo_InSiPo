@@ -1,9 +1,6 @@
 ﻿using capaEntidades;
 using MySql.Data.MySqlClient;
 using System.Collections.Generic;
-using System.Data.OleDb;
-using System.Data.SqlClient;
-using MySql.Data.Types;
 
 namespace capaDatos
 {

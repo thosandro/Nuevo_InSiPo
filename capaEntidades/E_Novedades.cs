@@ -1,5 +1,4 @@
 ﻿using System;
-using MySql.Data.Types;
 
 namespace capaEntidades
 {

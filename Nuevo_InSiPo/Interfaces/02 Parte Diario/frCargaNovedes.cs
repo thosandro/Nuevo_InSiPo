@@ -4,7 +4,6 @@ using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Windows.Forms;
-using MySql.Data.Types;
 
 namespace Nuevo_InSiPo.Interfaces
 {
@@ -307,7 +306,7 @@ namespace Nuevo_InSiPo.Interfaces
 
             if (continuaET == false)
                 cbET.SelectedIndex = -1;
-    
+
             cbEquipo.SelectedIndex = -1;
             cbMotivo.SelectedIndex = -1;
             cbResponsable.SelectedIndex = -1;
