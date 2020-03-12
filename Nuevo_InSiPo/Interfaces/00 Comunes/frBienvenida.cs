@@ -19,12 +19,12 @@ namespace Nuevo_InSiPo.Interfaces
             txtPruebaConexion.Text = "Probando conexion a la base de datos...";
             try
             {
-                conexionBD.miConexion.Open();
+                conexionBD.mySqlConexion.Open();
 
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Hubo un problema al intentar conectar con la base de datos. " + ex + " // " + conexionBD.miConexion.ConnectionString);
+                MessageBox.Show("Hubo un problema al intentar conectar con la base de datos. " + ex + " // " + conexionBD.mySqlConexion.ConnectionString);
                 Application.Exit();
             }
         }
@@ -32,7 +32,7 @@ namespace Nuevo_InSiPo.Interfaces
         private void timer1_Tick(object sender, EventArgs e)
         {
             timer1.Stop();
-            conexionBD.miConexion.Close();
+            conexionBD.mySqlConexion.Close();
             txtPruebaConexion.Text = "Conexion exitosa.";
             timer2.Start();
         }

@@ -10,19 +10,12 @@ namespace capaDatos
     {
         public List<E_EETT> listarEETT(string codificacionET)
         {
-            //SqlDataReader leerFilas;
-            //SqlCommand cmd = new SqlCommand("SP_listarEETT",conexionBD.miConexion);
-            //cmd.CommandType = System.Data.CommandType.StoredProcedure;
-            //conexionBD.miConexion.Open();
-
-            //cmd.Parameters.AddWithValue("@buscar", codificacionET);
-
             MySqlDataReader leerFilas;
             MySqlCommand cmd = new MySqlCommand("SP_listarEETT", conexionBD.mySqlConexion);
             cmd.CommandType = System.Data.CommandType.StoredProcedure;
             conexionBD.mySqlConexion.Open();
 
-            cmd.Parameters.AddWithValue("pBuscar", codificacionET);
+            cmd.Parameters.AddWithValue("pCodificacionET", codificacionET);
 
             leerFilas = cmd.ExecuteReader();
 
@@ -35,11 +28,9 @@ namespace capaDatos
                     Id = leerFilas.GetInt32(0),
                     Codificacion = leerFilas.GetString(1),
                     NombreCompleto = leerFilas.GetString(2),
-                    SistemaAsociado = leerFilas.GetString(3)
                 });
             }
 
-            //conexionBD.miConexion.Close();
             conexionBD.mySqlConexion.Close();
             leerFilas.Close();
 

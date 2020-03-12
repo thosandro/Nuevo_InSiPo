@@ -268,7 +268,13 @@ namespace Nuevo_InSiPo.Interfaces
             objEntidad.Ens = cbCorte.Text;
             objEntidad.Ap = Convert.ToInt32(txtAP.Text);
             objEntidad.Descripcion = txtDescripcion.Text.Trim();
-            objEntidad.Actuaciones = txtActuaciones.Text.Trim();
+
+            if (txtActuaciones.Visible == false)
+                objEntidad.Actuaciones = "";
+            else
+                objEntidad.Actuaciones = txtActuaciones.Text.Trim();
+
+            //objEntidad.Actuaciones = txtActuaciones.Text.Trim();
             objEntidad.Observaciones = txtObservaciones.Text.Trim();
 
             try
@@ -338,7 +344,7 @@ namespace Nuevo_InSiPo.Interfaces
         {
             N_Equipos objNegocio = new N_Equipos();
             List<E_Equipos> listaEquipos = new List<E_Equipos>();
-            listaEquipos = objNegocio.listarEquiposParaCargaNovedades(cbET.Text, "");
+            listaEquipos = objNegocio.listarEquipos_CargaNovedades(cbET.Text);
 
             cbEquipo.DataSource = listaEquipos;
             cbEquipo.DisplayMember = "codificacion";

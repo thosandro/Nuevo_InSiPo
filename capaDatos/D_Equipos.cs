@@ -10,23 +10,14 @@ namespace capaDatos
 {
     public class D_Equipos
     {
-        public List<E_Equipos> listarEquiposParaCargaNovedades(string codificacionET, string nombreCampo)
+        public List<E_Equipos> listarEquipos_CargaNovedades(string codificacionET)
         {
-            //SqlDataReader leerFilas;
-            //SqlCommand cmd = new SqlCommand("SP_listarEquipamientoParaCargaDeNovedades", conexionBD.miConexion);
-            //cmd.CommandType = System.Data.CommandType.StoredProcedure;
-            //conexionBD.miConexion.Open();
-
-            //cmd.Parameters.AddWithValue("@buscar", nombreCampo);
-            //cmd.Parameters.AddWithValue("@ET", codificacionET);
-
             MySqlDataReader leerFilas;
-            MySqlCommand cmd = new MySqlCommand("SP_listarEquipamientoParaCargaDeNovedades", conexionBD.mySqlConexion);
+            MySqlCommand cmd = new MySqlCommand("SP_listarEquiposParaCargaNovedades", conexionBD.mySqlConexion);
             cmd.CommandType = System.Data.CommandType.StoredProcedure;
             conexionBD.mySqlConexion.Open();
 
-            cmd.Parameters.AddWithValue("pBuscar", nombreCampo);
-            cmd.Parameters.AddWithValue("pET", codificacionET);
+            cmd.Parameters.AddWithValue("pCodificacionET", codificacionET);
 
             leerFilas = cmd.ExecuteReader();
 
@@ -38,15 +29,13 @@ namespace capaDatos
                 {
                     Id = leerFilas.GetInt32(0),
                     ETasociada = leerFilas.GetString(1),
-                    NombreCampo = leerFilas.GetString(2),
-                    TipoDeEquipo = leerFilas.GetString(3),
-                    Codificacion = leerFilas.GetString(4),
-                    NivelTension = leerFilas.GetString(5),
-                    AccionOperativa = leerFilas.GetString(6)
+                    NivelTension = leerFilas.GetString(2),
+                    NombreCampo = leerFilas.GetString(3),
+                    TipoDeEquipo = leerFilas.GetString(4),
+                    Codificacion = leerFilas.GetString(5)
                 });
             }
 
-            //conexionBD.miConexion.Close();
             conexionBD.mySqlConexion.Close();
             leerFilas.Close();
 

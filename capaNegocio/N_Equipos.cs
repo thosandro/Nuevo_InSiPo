@@ -11,9 +11,9 @@ namespace capaNegocio
     {
         D_Equipos objDato = new D_Equipos();
 
-        public List<E_Equipos> listarEquiposParaCargaNovedades(string codificacionET, string nombreCampo)
+        public List<E_Equipos> listarEquipos_CargaNovedades(string codificacionET)
         {
-            return objDato.listarEquiposParaCargaNovedades(codificacionET, nombreCampo);
+            return objDato.listarEquipos_CargaNovedades(codificacionET);
         }
     }
 }
