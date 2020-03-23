@@ -51,11 +51,11 @@ namespace capaDatos
                     Fecha = leerFilas.GetDateTime(1),
                     CodificacionET = leerFilas.GetString(2),
                     NombreCampo = leerFilas.GetString(3),
-                    NivelTension = leerFilas.GetDataTypeName(4),
+                    NivelTension = leerFilas.GetString(4),
                     CodificacionSistema = leerFilas.GetString(5),
                     Motivo = leerFilas.GetString(6),
                     Responsable = leerFilas.GetString(7),
-                    Ens = leerFilas.GetString(7),
+                    Ens = leerFilas.GetString(8),
                     Descripcion = leerFilas.GetString(9),
                     Actuaciones = leerFilas.GetString(10),
                     Observaciones = leerFilas.GetString(11)
