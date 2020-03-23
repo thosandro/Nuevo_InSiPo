@@ -59,7 +59,7 @@ namespace Nuevo_InSiPo.Interfaces
         }
         #endregion
 
-        /* FUNCIONES LOCALES */
+        /* FUNCIONES PROPIAS */
         /*********************/
         private void FXL_MenuSistemas(Control panel, PictureBox imagen)
         {
@@ -98,6 +98,11 @@ namespace Nuevo_InSiPo.Interfaces
         private void label2_Click(object sender, EventArgs e)
         {
            
+        }
+
+        private void frPrincipal_Load(object sender, EventArgs e)
+        {
+
         }
         /***************** SOLO PARA PROBAR LOG ********************/
     }

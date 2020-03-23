@@ -1327,6 +1327,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Nuevo InSiPo - Inicio";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.frPrincipal_FormClosed);
+            this.Load += new System.EventHandler(this.frPrincipal_Load);
             this.pnlMenuLateral.ResumeLayout(false);
             this.pnlMenuLateral.PerformLayout();
             this.panel13.ResumeLayout(false);
