@@ -193,15 +193,15 @@ namespace Nuevo_InSiPo.Interfaces
             FXL_logicaDeCorrientes();
         }
 
-        private void opcTemporizada_CheckedChanged(object sender, EventArgs e)
-        {
-            FXL_logicaDeCorrientes();
-        }
-        private void opcInstantanea_CheckedChanged(object sender, EventArgs e)
+        private void opcInstantanea_CheckedChanged_1(object sender, EventArgs e)
         {
             FXL_logicaDeCorrientes();
         }
 
+        private void opcTemporizada_CheckedChanged_1(object sender, EventArgs e)
+        {
+            FXL_logicaDeCorrientes();
+        }
         private void opcImpedancia_CheckedChanged(object sender, EventArgs e)
         {
             if (opcImpedancia.Checked == true)
@@ -221,7 +221,7 @@ namespace Nuevo_InSiPo.Interfaces
             if (opcImpedancia.Checked == false)
             {
                 FXL_habilitarActuaciones();
-                txtActuaciones.Text = "";
+                txtActuaciones.Text = "Sin señalización.";
             }
         }
 
@@ -651,7 +651,7 @@ namespace Nuevo_InSiPo.Interfaces
             {
                 opcTemporizada.Visible = false;
                 opcInstantanea.Visible = false;
-                txtActuaciones.Text = "";
+                txtActuaciones.Text = "Sin señalización.";
 
                 FXL_habilitarActuaciones();
             }
@@ -686,6 +686,9 @@ namespace Nuevo_InSiPo.Interfaces
 
             switch (aux)
             {
+                case "0000":
+                    txtActuaciones.Text = "RZ.";
+                    break;
                 case "0001":
                     txtActuaciones.Text = "RZ E.";
                     break;
@@ -754,7 +757,7 @@ namespace Nuevo_InSiPo.Interfaces
                 opcIfase.Enabled = true;
                 opcItierra.Enabled = true;
                 opcImpedancia.Enabled = true;
-                txtActuaciones.Text = "";
+                txtActuaciones.Text = "Sin señalización.";
             }
         }
     }

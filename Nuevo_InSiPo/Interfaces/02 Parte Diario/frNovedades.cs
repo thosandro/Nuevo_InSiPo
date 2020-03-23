@@ -11,16 +11,16 @@ namespace Nuevo_InSiPo.Interfaces._02_Parte_Diario
             InitializeComponent();
         }
 
+        N_Novedades objNegocio = new N_Novedades();
         private void frNovedades_Load(object sender, EventArgs e)
         {
-            N_Novedades objNegocio = new N_Novedades();
-            dgNovedades.DataSource = objNegocio.listarNovedades("");
+            dgNovedades.DataSource = objNegocio.listarNovedadesEntreFechas(dateFechaInicial.Value,dateFechaFinal.Value);
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void btFiltroFecha_Click(object sender, EventArgs e)
         {
-            lbDesde.Text = dateDesde.Text;
-            lbHasta.Text = dateHasta.Text;
+            dgNovedades.DataSource = "";
+            dgNovedades.DataSource = objNegocio.listarNovedadesEntreFechas(dateFechaInicial.Value, dateFechaFinal.Value);
         }
 
         /* FUNCIONES LOCALES */

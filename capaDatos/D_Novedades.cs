@@ -1,5 +1,6 @@
 ﻿using capaEntidades;
 using MySql.Data.MySqlClient;
+using System;
 using System.Collections.Generic;
 
 namespace capaDatos
@@ -8,23 +9,6 @@ namespace capaDatos
     {
         public void agregarNovedad(E_Novedades novedad)
         {
-            //SqlCommand cmd = new SqlCommand("SP_agregarOperacion", conexionBD.miConexion);
-            //cmd.CommandType = System.Data.CommandType.StoredProcedure;
-            //conexionBD.miConexion.Open();
-
-            //cmd.Parameters.AddWithValue("@id_Equipamiento", novedad.EquipoAsociado);
-            //cmd.Parameters.AddWithValue("@ET", novedad.ET);
-            //cmd.Parameters.AddWithValue("@nombreCampo", novedad.NombreCampo);
-            //cmd.Parameters.AddWithValue("@codificacionEquipo", novedad.CodificacionEquipo);
-            //cmd.Parameters.AddWithValue("@fecha", novedad.Fecha);
-            //cmd.Parameters.AddWithValue("@id_Motivo", novedad.Id_Motivo);
-            //cmd.Parameters.AddWithValue("@id_responsable", novedad.Id_Responsable);
-            //cmd.Parameters.AddWithValue("@ens", novedad.Ens);
-            //cmd.Parameters.AddWithValue("@ap", novedad.Ap);
-            //cmd.Parameters.AddWithValue("@descripcion", novedad.Descripcion);
-            //cmd.Parameters.AddWithValue("@observaciones", novedad.Observaciones);
-            //cmd.Parameters.AddWithValue("@actuaciones", novedad.Actuaciones);
-
             MySqlCommand cmd = new MySqlCommand("SP_agregarOperacion", conexionBD.mySqlConexion);
             cmd.CommandType = System.Data.CommandType.StoredProcedure;
             conexionBD.mySqlConexion.Open();
@@ -45,21 +29,15 @@ namespace capaDatos
             conexionBD.mySqlConexion.Close();
         }
 
-        public List<E_Novedades> listarNovedades(string ET)
+        public List<E_Novedades> listarNovedadesEntreFechas(DateTime fechaInicio, DateTime fechaFinal)
         {
-            //SqlDataReader leerFilas;
-            //SqlCommand cmd = new SqlCommand("SP_listarOperacion", conexionBD.miConexion);
-            //cmd.CommandType = System.Data.CommandType.StoredProcedure;
-            //conexionBD.miConexion.Open();
-
-            //cmd.Parameters.AddWithValue("@buscar", ET);
-
             MySqlDataReader leerFilas;
-            MySqlCommand cmd = new MySqlCommand("SP_listarOperaciones", conexionBD.mySqlConexion);
+            MySqlCommand cmd = new MySqlCommand("SP_listarOperacionesEntreFechas", conexionBD.mySqlConexion);
             cmd.CommandType = System.Data.CommandType.StoredProcedure;
             conexionBD.mySqlConexion.Open();
 
-            cmd.Parameters.AddWithValue("pBuscar", ET);
+            cmd.Parameters.AddWithValue("pFechaInicio", fechaInicio);
+            cmd.Parameters.AddWithValue("pFechaFinal", fechaFinal);
 
             leerFilas = cmd.ExecuteReader();
 
@@ -72,20 +50,18 @@ namespace capaDatos
                     Id = leerFilas.GetInt64(0),
                     Fecha = leerFilas.GetDateTime(1),
                     CodificacionET = leerFilas.GetString(2),
-                    CodificacionSistema = leerFilas.GetString(3),
                     NombreCampo = leerFilas.GetString(3),
-                    CodificacionEquipo = leerFilas.GetString(4),
-                    Motivo = leerFilas.GetString(5),
-                    Responsable = leerFilas.GetString(6),
+                    NivelTension = leerFilas.GetDataTypeName(4),
+                    CodificacionSistema = leerFilas.GetString(5),
+                    Motivo = leerFilas.GetString(6),
+                    Responsable = leerFilas.GetString(7),
                     Ens = leerFilas.GetString(7),
-                    Ap = leerFilas.GetInt32(8),
                     Descripcion = leerFilas.GetString(9),
                     Actuaciones = leerFilas.GetString(10),
                     Observaciones = leerFilas.GetString(11)
                 });
             }
 
-            //conexionBD.miConexion.Close();
             conexionBD.mySqlConexion.Close();
             leerFilas.Close();
 

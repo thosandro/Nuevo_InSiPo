@@ -56,17 +56,19 @@
             this.opcDisparo = new System.Windows.Forms.RadioButton();
             this.opcCierreFalla = new System.Windows.Forms.RadioButton();
             this.groupActuaciones = new System.Windows.Forms.GroupBox();
-            this.opcInstantanea = new System.Windows.Forms.CheckBox();
+            this.opcInstantanea = new System.Windows.Forms.RadioButton();
+            this.opcTemporizada = new System.Windows.Forms.RadioButton();
             this.opcFaseE = new System.Windows.Forms.CheckBox();
             this.opcFaseT = new System.Windows.Forms.CheckBox();
             this.opcFaseS = new System.Windows.Forms.CheckBox();
             this.opcFaseR = new System.Windows.Forms.CheckBox();
-            this.opcTemporizada = new System.Windows.Forms.CheckBox();
             this.opcBuchoolz = new System.Windows.Forms.CheckBox();
             this.opcImpedancia = new System.Windows.Forms.CheckBox();
             this.opcItierra = new System.Windows.Forms.CheckBox();
             this.opcIfase = new System.Windows.Forms.CheckBox();
             this.opcCuba = new System.Windows.Forms.CheckBox();
+            this.opcInstantanea_ = new System.Windows.Forms.CheckBox();
+            this.opcTemporizada_ = new System.Windows.Forms.CheckBox();
             this.txtActuaciones = new System.Windows.Forms.TextBox();
             this.btnGuardar = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -98,7 +100,7 @@
             this.label1.Font = new System.Drawing.Font("Century Gothic", 9.75F);
             this.label1.Location = new System.Drawing.Point(40, 93);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(91, 17);
+            this.label1.Size = new System.Drawing.Size(91, 16);
             this.label1.TabIndex = 0;
             this.label1.Text = "Fecha y hora";
             // 
@@ -108,7 +110,7 @@
             this.label2.Font = new System.Drawing.Font("Century Gothic", 9.75F);
             this.label2.Location = new System.Drawing.Point(40, 122);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(28, 17);
+            this.label2.Size = new System.Drawing.Size(28, 16);
             this.label2.TabIndex = 1;
             this.label2.Text = "E.T.";
             // 
@@ -118,7 +120,7 @@
             this.cbET.FormattingEnabled = true;
             this.cbET.Location = new System.Drawing.Point(140, 119);
             this.cbET.Name = "cbET";
-            this.cbET.Size = new System.Drawing.Size(133, 25);
+            this.cbET.Size = new System.Drawing.Size(133, 24);
             this.cbET.TabIndex = 3;
             this.cbET.SelectedIndexChanged += new System.EventHandler(this.cbET_SelectedIndexChanged);
             this.cbET.TextChanged += new System.EventHandler(this.cbET_TextChanged);
@@ -139,7 +141,7 @@
             this.cbEquipo.FormattingEnabled = true;
             this.cbEquipo.Location = new System.Drawing.Point(140, 150);
             this.cbEquipo.Name = "cbEquipo";
-            this.cbEquipo.Size = new System.Drawing.Size(133, 25);
+            this.cbEquipo.Size = new System.Drawing.Size(133, 24);
             this.cbEquipo.TabIndex = 4;
             this.cbEquipo.SelectedIndexChanged += new System.EventHandler(this.cbEquipo_SelectedIndexChanged);
             // 
@@ -149,7 +151,7 @@
             this.cbMotivo.FormattingEnabled = true;
             this.cbMotivo.Location = new System.Drawing.Point(140, 208);
             this.cbMotivo.Name = "cbMotivo";
-            this.cbMotivo.Size = new System.Drawing.Size(133, 25);
+            this.cbMotivo.Size = new System.Drawing.Size(133, 24);
             this.cbMotivo.TabIndex = 5;
             this.cbMotivo.SelectedIndexChanged += new System.EventHandler(this.cbMotivo_SelectedIndexChanged);
             this.cbMotivo.TextChanged += new System.EventHandler(this.cbMotivo_TextChanged);
@@ -161,7 +163,7 @@
             this.label3.Font = new System.Drawing.Font("Century Gothic", 9.75F);
             this.label3.Location = new System.Drawing.Point(41, 153);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(53, 17);
+            this.label3.Size = new System.Drawing.Size(53, 16);
             this.label3.TabIndex = 10;
             this.label3.Text = "Equipo";
             // 
@@ -171,7 +173,7 @@
             this.label4.Font = new System.Drawing.Font("Century Gothic", 9.75F);
             this.label4.Location = new System.Drawing.Point(41, 211);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(53, 17);
+            this.label4.Size = new System.Drawing.Size(54, 16);
             this.label4.TabIndex = 11;
             this.label4.Text = "Motivo";
             // 
@@ -181,7 +183,7 @@
             this.label5.Font = new System.Drawing.Font("Century Gothic", 9.75F);
             this.label5.Location = new System.Drawing.Point(41, 242);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(89, 17);
+            this.label5.Size = new System.Drawing.Size(89, 16);
             this.label5.TabIndex = 12;
             this.label5.Text = "Responsable";
             // 
@@ -191,7 +193,7 @@
             this.cbResponsable.FormattingEnabled = true;
             this.cbResponsable.Location = new System.Drawing.Point(140, 239);
             this.cbResponsable.Name = "cbResponsable";
-            this.cbResponsable.Size = new System.Drawing.Size(240, 25);
+            this.cbResponsable.Size = new System.Drawing.Size(240, 24);
             this.cbResponsable.TabIndex = 6;
             // 
             // txtAP
@@ -213,7 +215,7 @@
             "NO"});
             this.cbCorte.Location = new System.Drawing.Point(139, 270);
             this.cbCorte.Name = "cbCorte";
-            this.cbCorte.Size = new System.Drawing.Size(51, 25);
+            this.cbCorte.Size = new System.Drawing.Size(51, 24);
             this.cbCorte.TabIndex = 7;
             // 
             // label6
@@ -222,7 +224,7 @@
             this.label6.Font = new System.Drawing.Font("Century Gothic", 9.75F);
             this.label6.Location = new System.Drawing.Point(297, 273);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(25, 17);
+            this.label6.Size = new System.Drawing.Size(26, 16);
             this.label6.TabIndex = 16;
             this.label6.Text = "AP";
             // 
@@ -232,7 +234,7 @@
             this.label7.Font = new System.Drawing.Font("Century Gothic", 9.75F);
             this.label7.Location = new System.Drawing.Point(41, 273);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(45, 17);
+            this.label7.Size = new System.Drawing.Size(45, 16);
             this.label7.TabIndex = 17;
             this.label7.Text = "Corte";
             // 
@@ -254,7 +256,7 @@
             this.opcApertura.Font = new System.Drawing.Font("Century Gothic", 9.75F);
             this.opcApertura.Location = new System.Drawing.Point(15, 22);
             this.opcApertura.Name = "opcApertura";
-            this.opcApertura.Size = new System.Drawing.Size(82, 21);
+            this.opcApertura.Size = new System.Drawing.Size(83, 20);
             this.opcApertura.TabIndex = 1;
             this.opcApertura.TabStop = true;
             this.opcApertura.Text = "Apertura";
@@ -267,7 +269,7 @@
             this.opcCierre.Font = new System.Drawing.Font("Century Gothic", 9.75F);
             this.opcCierre.Location = new System.Drawing.Point(15, 42);
             this.opcCierre.Name = "opcCierre";
-            this.opcCierre.Size = new System.Drawing.Size(64, 21);
+            this.opcCierre.Size = new System.Drawing.Size(64, 20);
             this.opcCierre.TabIndex = 2;
             this.opcCierre.TabStop = true;
             this.opcCierre.Text = "Cierre";
@@ -294,7 +296,7 @@
             this.opcApu.Font = new System.Drawing.Font("Century Gothic", 9.75F);
             this.opcApu.Location = new System.Drawing.Point(35, 62);
             this.opcApu.Name = "opcApu";
-            this.opcApu.Size = new System.Drawing.Size(161, 21);
+            this.opcApu.Size = new System.Drawing.Size(162, 20);
             this.opcApu.TabIndex = 3;
             this.opcApu.Text = "A pedido del usuario";
             this.opcApu.UseVisualStyleBackColor = true;
@@ -323,7 +325,7 @@
             this.opcCierreNegativo.Font = new System.Drawing.Font("Century Gothic", 9.75F);
             this.opcCierreNegativo.Location = new System.Drawing.Point(15, 103);
             this.opcCierreNegativo.Name = "opcCierreNegativo";
-            this.opcCierreNegativo.Size = new System.Drawing.Size(135, 21);
+            this.opcCierreNegativo.Size = new System.Drawing.Size(134, 20);
             this.opcCierreNegativo.TabIndex = 5;
             this.opcCierreNegativo.TabStop = true;
             this.opcCierreNegativo.Text = "Intento negativo";
@@ -336,7 +338,7 @@
             this.opcRecierrePositivo.Font = new System.Drawing.Font("Century Gothic", 9.75F);
             this.opcRecierrePositivo.Location = new System.Drawing.Point(15, 42);
             this.opcRecierrePositivo.Name = "opcRecierrePositivo";
-            this.opcRecierrePositivo.Size = new System.Drawing.Size(126, 21);
+            this.opcRecierrePositivo.Size = new System.Drawing.Size(126, 20);
             this.opcRecierrePositivo.TabIndex = 2;
             this.opcRecierrePositivo.TabStop = true;
             this.opcRecierrePositivo.Text = "Recierre exitoso";
@@ -349,7 +351,7 @@
             this.opcRecierreNegativo.Font = new System.Drawing.Font("Century Gothic", 9.75F);
             this.opcRecierreNegativo.Location = new System.Drawing.Point(15, 62);
             this.opcRecierreNegativo.Name = "opcRecierreNegativo";
-            this.opcRecierreNegativo.Size = new System.Drawing.Size(140, 21);
+            this.opcRecierreNegativo.Size = new System.Drawing.Size(139, 20);
             this.opcRecierreNegativo.TabIndex = 3;
             this.opcRecierreNegativo.TabStop = true;
             this.opcRecierreNegativo.Text = "Recierre negativo";
@@ -362,7 +364,7 @@
             this.opcApuFalla.Font = new System.Drawing.Font("Century Gothic", 9.75F);
             this.opcApuFalla.Location = new System.Drawing.Point(35, 124);
             this.opcApuFalla.Name = "opcApuFalla";
-            this.opcApuFalla.Size = new System.Drawing.Size(161, 21);
+            this.opcApuFalla.Size = new System.Drawing.Size(162, 20);
             this.opcApuFalla.TabIndex = 6;
             this.opcApuFalla.Text = "A pedido del usuario";
             this.opcApuFalla.UseVisualStyleBackColor = true;
@@ -374,7 +376,7 @@
             this.opcDisparo.Font = new System.Drawing.Font("Century Gothic", 9.75F);
             this.opcDisparo.Location = new System.Drawing.Point(15, 22);
             this.opcDisparo.Name = "opcDisparo";
-            this.opcDisparo.Size = new System.Drawing.Size(75, 21);
+            this.opcDisparo.Size = new System.Drawing.Size(75, 20);
             this.opcDisparo.TabIndex = 1;
             this.opcDisparo.TabStop = true;
             this.opcDisparo.Text = "Disparo";
@@ -387,7 +389,7 @@
             this.opcCierreFalla.Font = new System.Drawing.Font("Century Gothic", 9.75F);
             this.opcCierreFalla.Location = new System.Drawing.Point(15, 82);
             this.opcCierreFalla.Name = "opcCierreFalla";
-            this.opcCierreFalla.Size = new System.Drawing.Size(64, 21);
+            this.opcCierreFalla.Size = new System.Drawing.Size(64, 20);
             this.opcCierreFalla.TabIndex = 4;
             this.opcCierreFalla.TabStop = true;
             this.opcCierreFalla.Text = "Cierre";
@@ -397,11 +399,11 @@
             // groupActuaciones
             // 
             this.groupActuaciones.Controls.Add(this.opcInstantanea);
+            this.groupActuaciones.Controls.Add(this.opcTemporizada);
             this.groupActuaciones.Controls.Add(this.opcFaseE);
             this.groupActuaciones.Controls.Add(this.opcFaseT);
             this.groupActuaciones.Controls.Add(this.opcFaseS);
             this.groupActuaciones.Controls.Add(this.opcFaseR);
-            this.groupActuaciones.Controls.Add(this.opcTemporizada);
             this.groupActuaciones.Controls.Add(this.opcBuchoolz);
             this.groupActuaciones.Controls.Add(this.opcImpedancia);
             this.groupActuaciones.Controls.Add(this.opcItierra);
@@ -420,14 +422,29 @@
             // 
             this.opcInstantanea.AutoSize = true;
             this.opcInstantanea.Font = new System.Drawing.Font("Century Gothic", 9.75F);
-            this.opcInstantanea.Location = new System.Drawing.Point(59, 42);
+            this.opcInstantanea.Location = new System.Drawing.Point(59, 22);
             this.opcInstantanea.Name = "opcInstantanea";
-            this.opcInstantanea.Size = new System.Drawing.Size(104, 21);
-            this.opcInstantanea.TabIndex = 11;
+            this.opcInstantanea.Size = new System.Drawing.Size(103, 20);
+            this.opcInstantanea.TabIndex = 12;
+            this.opcInstantanea.TabStop = true;
             this.opcInstantanea.Text = "Instantánea";
             this.opcInstantanea.UseVisualStyleBackColor = true;
             this.opcInstantanea.Visible = false;
-            this.opcInstantanea.CheckedChanged += new System.EventHandler(this.opcInstantanea_CheckedChanged);
+            this.opcInstantanea.CheckedChanged += new System.EventHandler(this.opcInstantanea_CheckedChanged_1);
+            // 
+            // opcTemporizada
+            // 
+            this.opcTemporizada.AutoSize = true;
+            this.opcTemporizada.Font = new System.Drawing.Font("Century Gothic", 9.75F);
+            this.opcTemporizada.Location = new System.Drawing.Point(59, 41);
+            this.opcTemporizada.Name = "opcTemporizada";
+            this.opcTemporizada.Size = new System.Drawing.Size(110, 20);
+            this.opcTemporizada.TabIndex = 11;
+            this.opcTemporizada.TabStop = true;
+            this.opcTemporizada.Text = "Temporizada";
+            this.opcTemporizada.UseVisualStyleBackColor = true;
+            this.opcTemporizada.Visible = false;
+            this.opcTemporizada.CheckedChanged += new System.EventHandler(this.opcTemporizada_CheckedChanged_1);
             // 
             // opcFaseE
             // 
@@ -435,7 +452,7 @@
             this.opcFaseE.Font = new System.Drawing.Font("Century Gothic", 9.75F);
             this.opcFaseE.Location = new System.Drawing.Point(177, 70);
             this.opcFaseE.Name = "opcFaseE";
-            this.opcFaseE.Size = new System.Drawing.Size(34, 21);
+            this.opcFaseE.Size = new System.Drawing.Size(34, 20);
             this.opcFaseE.TabIndex = 8;
             this.opcFaseE.Tag = "4";
             this.opcFaseE.Text = "E";
@@ -449,7 +466,7 @@
             this.opcFaseT.Font = new System.Drawing.Font("Century Gothic", 9.75F);
             this.opcFaseT.Location = new System.Drawing.Point(139, 70);
             this.opcFaseT.Name = "opcFaseT";
-            this.opcFaseT.Size = new System.Drawing.Size(32, 21);
+            this.opcFaseT.Size = new System.Drawing.Size(32, 20);
             this.opcFaseT.TabIndex = 7;
             this.opcFaseT.Tag = "3";
             this.opcFaseT.Text = "T";
@@ -463,7 +480,7 @@
             this.opcFaseS.Font = new System.Drawing.Font("Century Gothic", 9.75F);
             this.opcFaseS.Location = new System.Drawing.Point(100, 70);
             this.opcFaseS.Name = "opcFaseS";
-            this.opcFaseS.Size = new System.Drawing.Size(33, 21);
+            this.opcFaseS.Size = new System.Drawing.Size(33, 20);
             this.opcFaseS.TabIndex = 6;
             this.opcFaseS.Tag = "2";
             this.opcFaseS.Text = "S";
@@ -477,7 +494,7 @@
             this.opcFaseR.Font = new System.Drawing.Font("Century Gothic", 9.75F);
             this.opcFaseR.Location = new System.Drawing.Point(59, 70);
             this.opcFaseR.Name = "opcFaseR";
-            this.opcFaseR.Size = new System.Drawing.Size(35, 21);
+            this.opcFaseR.Size = new System.Drawing.Size(35, 20);
             this.opcFaseR.TabIndex = 5;
             this.opcFaseR.Tag = "1";
             this.opcFaseR.Text = "R";
@@ -485,26 +502,13 @@
             this.opcFaseR.Visible = false;
             this.opcFaseR.CheckedChanged += new System.EventHandler(this.opcFaseR_CheckedChanged);
             // 
-            // opcTemporizada
-            // 
-            this.opcTemporizada.AutoSize = true;
-            this.opcTemporizada.Font = new System.Drawing.Font("Century Gothic", 9.75F);
-            this.opcTemporizada.Location = new System.Drawing.Point(59, 22);
-            this.opcTemporizada.Name = "opcTemporizada";
-            this.opcTemporizada.Size = new System.Drawing.Size(111, 21);
-            this.opcTemporizada.TabIndex = 3;
-            this.opcTemporizada.Text = "Temporizada";
-            this.opcTemporizada.UseVisualStyleBackColor = true;
-            this.opcTemporizada.Visible = false;
-            this.opcTemporizada.CheckedChanged += new System.EventHandler(this.opcTemporizada_CheckedChanged);
-            // 
             // opcBuchoolz
             // 
             this.opcBuchoolz.AutoSize = true;
             this.opcBuchoolz.Font = new System.Drawing.Font("Century Gothic", 9.75F);
             this.opcBuchoolz.Location = new System.Drawing.Point(6, 110);
             this.opcBuchoolz.Name = "opcBuchoolz";
-            this.opcBuchoolz.Size = new System.Drawing.Size(84, 21);
+            this.opcBuchoolz.Size = new System.Drawing.Size(84, 20);
             this.opcBuchoolz.TabIndex = 10;
             this.opcBuchoolz.Text = "Buchholz";
             this.opcBuchoolz.UseVisualStyleBackColor = true;
@@ -516,7 +520,7 @@
             this.opcImpedancia.Font = new System.Drawing.Font("Century Gothic", 9.75F);
             this.opcImpedancia.Location = new System.Drawing.Point(6, 70);
             this.opcImpedancia.Name = "opcImpedancia";
-            this.opcImpedancia.Size = new System.Drawing.Size(41, 21);
+            this.opcImpedancia.Size = new System.Drawing.Size(41, 20);
             this.opcImpedancia.TabIndex = 4;
             this.opcImpedancia.Tag = "0";
             this.opcImpedancia.Text = "RZ";
@@ -529,7 +533,7 @@
             this.opcItierra.Font = new System.Drawing.Font("Century Gothic", 9.75F);
             this.opcItierra.Location = new System.Drawing.Point(6, 42);
             this.opcItierra.Name = "opcItierra";
-            this.opcItierra.Size = new System.Drawing.Size(47, 21);
+            this.opcItierra.Size = new System.Drawing.Size(47, 20);
             this.opcItierra.TabIndex = 2;
             this.opcItierra.Text = "Io>";
             this.opcItierra.UseVisualStyleBackColor = true;
@@ -541,7 +545,7 @@
             this.opcIfase.Font = new System.Drawing.Font("Century Gothic", 9.75F);
             this.opcIfase.Location = new System.Drawing.Point(6, 22);
             this.opcIfase.Name = "opcIfase";
-            this.opcIfase.Size = new System.Drawing.Size(38, 21);
+            this.opcIfase.Size = new System.Drawing.Size(38, 20);
             this.opcIfase.TabIndex = 1;
             this.opcIfase.Text = "I>";
             this.opcIfase.UseVisualStyleBackColor = true;
@@ -553,11 +557,35 @@
             this.opcCuba.Font = new System.Drawing.Font("Century Gothic", 9.75F);
             this.opcCuba.Location = new System.Drawing.Point(6, 90);
             this.opcCuba.Name = "opcCuba";
-            this.opcCuba.Size = new System.Drawing.Size(64, 21);
+            this.opcCuba.Size = new System.Drawing.Size(64, 20);
             this.opcCuba.TabIndex = 9;
             this.opcCuba.Text = "Cuba";
             this.opcCuba.UseVisualStyleBackColor = true;
             this.opcCuba.CheckedChanged += new System.EventHandler(this.opcCuba_CheckedChanged);
+            // 
+            // opcInstantanea_
+            // 
+            this.opcInstantanea_.AutoSize = true;
+            this.opcInstantanea_.Font = new System.Drawing.Font("Century Gothic", 9.75F);
+            this.opcInstantanea_.Location = new System.Drawing.Point(435, 269);
+            this.opcInstantanea_.Name = "opcInstantanea_";
+            this.opcInstantanea_.Size = new System.Drawing.Size(104, 20);
+            this.opcInstantanea_.TabIndex = 11;
+            this.opcInstantanea_.Text = "Instantánea";
+            this.opcInstantanea_.UseVisualStyleBackColor = true;
+            this.opcInstantanea_.Visible = false;
+            // 
+            // opcTemporizada_
+            // 
+            this.opcTemporizada_.AutoSize = true;
+            this.opcTemporizada_.Font = new System.Drawing.Font("Century Gothic", 9.75F);
+            this.opcTemporizada_.Location = new System.Drawing.Point(435, 249);
+            this.opcTemporizada_.Name = "opcTemporizada_";
+            this.opcTemporizada_.Size = new System.Drawing.Size(111, 20);
+            this.opcTemporizada_.TabIndex = 3;
+            this.opcTemporizada_.Text = "Temporizada";
+            this.opcTemporizada_.UseVisualStyleBackColor = true;
+            this.opcTemporizada_.Visible = false;
             // 
             // txtActuaciones
             // 
@@ -609,7 +637,7 @@
             this.txtMotivo.Font = new System.Drawing.Font("Century Gothic", 9.75F);
             this.txtMotivo.Location = new System.Drawing.Point(279, 211);
             this.txtMotivo.Name = "txtMotivo";
-            this.txtMotivo.Size = new System.Drawing.Size(77, 17);
+            this.txtMotivo.Size = new System.Drawing.Size(78, 16);
             this.txtMotivo.TabIndex = 30;
             this.txtMotivo.Text = "< Motivo >";
             // 
@@ -620,7 +648,7 @@
             this.txtNombreET.ForeColor = System.Drawing.SystemColors.ControlText;
             this.txtNombreET.Location = new System.Drawing.Point(278, 122);
             this.txtNombreET.Name = "txtNombreET";
-            this.txtNombreET.Size = new System.Drawing.Size(101, 17);
+            this.txtNombreET.Size = new System.Drawing.Size(101, 16);
             this.txtNombreET.TabIndex = 31;
             this.txtNombreET.Text = "< Nombre ET >";
             this.txtNombreET.UseMnemonic = false;
@@ -631,7 +659,7 @@
             this.txtNivelTension.Font = new System.Drawing.Font("Century Gothic", 9.75F);
             this.txtNivelTension.Location = new System.Drawing.Point(679, 158);
             this.txtNivelTension.Name = "txtNivelTension";
-            this.txtNivelTension.Size = new System.Drawing.Size(83, 17);
+            this.txtNivelTension.Size = new System.Drawing.Size(83, 16);
             this.txtNivelTension.TabIndex = 32;
             this.txtNivelTension.Text = "< Campo >";
             this.txtNivelTension.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -664,7 +692,7 @@
             this.txtTipoEquipo.Font = new System.Drawing.Font("Century Gothic", 9.75F);
             this.txtTipoEquipo.Location = new System.Drawing.Point(588, 178);
             this.txtTipoEquipo.Name = "txtTipoEquipo";
-            this.txtTipoEquipo.Size = new System.Drawing.Size(103, 17);
+            this.txtTipoEquipo.Size = new System.Drawing.Size(103, 16);
             this.txtTipoEquipo.TabIndex = 35;
             this.txtTipoEquipo.Text = "< tipoEquipo >";
             this.txtTipoEquipo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -676,7 +704,7 @@
             this.txtNombreCampo.Font = new System.Drawing.Font("Century Gothic", 9.75F);
             this.txtNombreCampo.Location = new System.Drawing.Point(697, 178);
             this.txtNombreCampo.Name = "txtNombreCampo";
-            this.txtNombreCampo.Size = new System.Drawing.Size(134, 17);
+            this.txtNombreCampo.Size = new System.Drawing.Size(134, 16);
             this.txtNombreCampo.TabIndex = 36;
             this.txtNombreCampo.Text = "< nombreCampo >";
             this.txtNombreCampo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -688,7 +716,7 @@
             this.txtDescripcionEquipo.Font = new System.Drawing.Font("Century Gothic", 9.75F);
             this.txtDescripcionEquipo.Location = new System.Drawing.Point(137, 178);
             this.txtDescripcionEquipo.Name = "txtDescripcionEquipo";
-            this.txtDescripcionEquipo.Size = new System.Drawing.Size(156, 17);
+            this.txtDescripcionEquipo.Size = new System.Drawing.Size(156, 16);
             this.txtDescripcionEquipo.TabIndex = 37;
             this.txtDescripcionEquipo.Text = "< Descripcion Equipo >";
             this.txtDescripcionEquipo.UseMnemonic = false;
@@ -713,7 +741,7 @@
             this.txtIdEquipo.Font = new System.Drawing.Font("Century Gothic", 9.75F);
             this.txtIdEquipo.Location = new System.Drawing.Point(588, 158);
             this.txtIdEquipo.Name = "txtIdEquipo";
-            this.txtIdEquipo.Size = new System.Drawing.Size(85, 17);
+            this.txtIdEquipo.Size = new System.Drawing.Size(85, 16);
             this.txtIdEquipo.TabIndex = 39;
             this.txtIdEquipo.Text = "< idEquipo>";
             this.txtIdEquipo.UseMnemonic = false;
@@ -724,7 +752,7 @@
             this.txtIdMotivo.Font = new System.Drawing.Font("Century Gothic", 9.75F);
             this.txtIdMotivo.Location = new System.Drawing.Point(590, 211);
             this.txtIdMotivo.Name = "txtIdMotivo";
-            this.txtIdMotivo.Size = new System.Drawing.Size(85, 17);
+            this.txtIdMotivo.Size = new System.Drawing.Size(86, 16);
             this.txtIdMotivo.TabIndex = 40;
             this.txtIdMotivo.Text = "< idMotivo>";
             this.txtIdMotivo.UseMnemonic = false;
@@ -735,7 +763,7 @@
             this.txtIdResponsable.Font = new System.Drawing.Font("Century Gothic", 9.75F);
             this.txtIdResponsable.Location = new System.Drawing.Point(590, 242);
             this.txtIdResponsable.Name = "txtIdResponsable";
-            this.txtIdResponsable.Size = new System.Drawing.Size(117, 17);
+            this.txtIdResponsable.Size = new System.Drawing.Size(117, 16);
             this.txtIdResponsable.TabIndex = 41;
             this.txtIdResponsable.Text = "<idResponsable>";
             this.txtIdResponsable.UseMnemonic = false;
@@ -746,7 +774,7 @@
             this.opcMantenerFecha.Font = new System.Drawing.Font("Century Gothic", 9.75F);
             this.opcMantenerFecha.Location = new System.Drawing.Point(282, 92);
             this.opcMantenerFecha.Name = "opcMantenerFecha";
-            this.opcMantenerFecha.Size = new System.Drawing.Size(129, 21);
+            this.opcMantenerFecha.Size = new System.Drawing.Size(130, 20);
             this.opcMantenerFecha.TabIndex = 2;
             this.opcMantenerFecha.Text = "Mantener fecha";
             this.opcMantenerFecha.UseVisualStyleBackColor = true;
@@ -757,7 +785,7 @@
             this.txtIdSistema.Font = new System.Drawing.Font("Century Gothic", 9.75F);
             this.txtIdSistema.Location = new System.Drawing.Point(648, 122);
             this.txtIdSistema.Name = "txtIdSistema";
-            this.txtIdSistema.Size = new System.Drawing.Size(89, 17);
+            this.txtIdSistema.Size = new System.Drawing.Size(89, 16);
             this.txtIdSistema.TabIndex = 126;
             this.txtIdSistema.Text = "< idSistema>";
             this.txtIdSistema.UseMnemonic = false;
@@ -768,7 +796,7 @@
             this.txtIdET.Font = new System.Drawing.Font("Century Gothic", 9.75F);
             this.txtIdET.Location = new System.Drawing.Point(590, 122);
             this.txtIdET.Name = "txtIdET";
-            this.txtIdET.Size = new System.Drawing.Size(52, 17);
+            this.txtIdET.Size = new System.Drawing.Size(52, 16);
             this.txtIdET.TabIndex = 125;
             this.txtIdET.Text = "< idET>";
             this.txtIdET.UseMnemonic = false;
@@ -779,10 +807,12 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(143)))), ((int)(((byte)(185)))));
             this.ClientSize = new System.Drawing.Size(569, 745);
+            this.Controls.Add(this.opcInstantanea_);
             this.Controls.Add(this.txtIdSistema);
             this.Controls.Add(this.txtIdET);
             this.Controls.Add(this.opcMantenerFecha);
             this.Controls.Add(this.txtIdResponsable);
+            this.Controls.Add(this.opcTemporizada_);
             this.Controls.Add(this.txtIdMotivo);
             this.Controls.Add(this.groupFalla);
             this.Controls.Add(this.txtIdEquipo);
@@ -875,7 +905,7 @@
         private System.Windows.Forms.CheckBox opcFaseT;
         private System.Windows.Forms.CheckBox opcFaseS;
         private System.Windows.Forms.CheckBox opcFaseR;
-        private System.Windows.Forms.CheckBox opcTemporizada;
+        private System.Windows.Forms.CheckBox opcTemporizada_;
         private System.Windows.Forms.Button btnGuardar;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label8;
@@ -895,6 +925,8 @@
         private System.Windows.Forms.CheckBox opcMantenerFecha;
         private System.Windows.Forms.Label txtIdSistema;
         private System.Windows.Forms.Label txtIdET;
-        private System.Windows.Forms.CheckBox opcInstantanea;
+        private System.Windows.Forms.CheckBox opcInstantanea_;
+        private System.Windows.Forms.RadioButton opcInstantanea;
+        private System.Windows.Forms.RadioButton opcTemporizada;
     }
 }

@@ -24,6 +24,7 @@ namespace capaEntidades
         private string _codificacionSistema;
         private string _nombreCampo;
         private string _codificacionEquipo;
+        private string _nivelTension;
 
         public long Id { get => _id; set => _id = value; }
         public DateTime Fecha { get => _fecha; set => _fecha = value; }
@@ -39,10 +40,10 @@ namespace capaEntidades
         //
         public string Motivo { get => _motivo; set => _motivo = value; }
         public string Responsable { get => _responsable; set => _responsable = value; }
-
         public string CodificacionET { get => _codificacionET; set => _codificacionET = value; }
         public string CodificacionSistema { get => _codificacionSistema; set => _codificacionSistema = value; }
         public string NombreCampo { get => _nombreCampo; set => _nombreCampo = value; }
         public string CodificacionEquipo { get => _codificacionEquipo; set => _codificacionEquipo = value; }
+        public string NivelTension { get => _nivelTension; set => _nivelTension = value; }
     }
 }

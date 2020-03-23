@@ -1,5 +1,6 @@
 ﻿using capaDatos;
 using capaEntidades;
+using System;
 using System.Collections.Generic;
 
 namespace capaNegocio
@@ -13,9 +14,9 @@ namespace capaNegocio
             objDato.agregarNovedad(novedad);
         }
 
-        public List<E_Novedades> listarNovedades(string ET)
+        public List<E_Novedades> listarNovedadesEntreFechas(DateTime fechaInicio, DateTime fechaFinal)
         {
-            return objDato.listarNovedades(ET);
+            return objDato.listarNovedadesEntreFechas(fechaInicio, fechaFinal);
         }
     }
 }
